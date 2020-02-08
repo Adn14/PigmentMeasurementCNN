@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pigment Prediction</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Conference project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles/bootstrap4/bootstrap.min.css') }}">
+<link href="{{ url_for('static', filename = 'plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'plugins/OwlCarousel2-2.2.1/animate.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles/main_styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles/responsive.css') }}">
+<link class="jsbin" href="//http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/readFile.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/submit.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/select_model.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/cek-login.js') }}"></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-3.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'styles/bootstrap4/popper.js') }}" ></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'styles/bootstrap4/bootstrap.min.js') }}" ></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'plugins/easing/easing.js') }}" ></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'plugins/parallax-js-master/parallax.min.js') }}" ></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/custom.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/cek-login.js') }}"></script>
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Menu -->
+
+	
+	<!-- Home -->
+
+	<div class="home">
+		<!-- <div class="home_background" style="background-image: url(images/index.jpg)"></div> -->
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ url_for('static', filename = 'images/index.jpg') }}" data-speed="0.8"></div>
+
+		<!-- Header -->
+
+		<header class="header" id="header">
+			<div>
+				<div class="header_top">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+									<div>
+										<a href="#">
+											<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+												<div class="logo_image"><div><img src="{{ url_for('static', filename = 'images/logo.png') }}" alt=""></div></div>
+												<div class="logo_content">
+													<div id="logo_text" class="logo_text logo_text_not_ie">Estimasi Kadar Pigmen Fotosintesis</div>
+													
+												</div>
+											</div>
+										</a>	
+									</div>
+									
+									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+								</div>
+							</div>
+							<div id="log-element">
+								<script type="text/javascript">
+									cekLogStatus();
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header_nav" id="header_nav_pin">
+					<div class="header_nav_inner">
+						<div class="header_nav_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+											<nav class="main_nav">
+												<ul>
+													<li><a href="/">Home</a></li>
+													<li><a href="latih">Latih Model</a></li>
+													<li class="active"><a href="estimasi">Estimasi</a></li>
+													<li><a href="record">Record</a></li>
+													<li><a href="informasi">Informasi</a></li>
+													<li id="user-list"><a href="users">User List</a></li>
+												</ul>
+											</nav>
+											
+										</div>
+									</div>
+									<div id="sign-element" style="text-align: right;">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="search_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="search_content d-flex flex-row align-items-center justify-content-end">
+											<form action="#" id="search_container_form" class="search_container_form">
+												<input type="text" class="search_container_input" placeholder="Search" required="required">
+												<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</header>
+	</div>
+	
+	<script type="text/javascript">
+		cekLogStatus();
+	</script>
+	<div id="no-access" class="alert alert-danger container" role="alert" style="margin-top: 300px; text-align: center; display: none;"></div>
+	<!-- Generate -->
+	<div id="estimate-box" class="container " style="display: none">
+		<br><br><br><br>
+		<script type="text/javascript">
+			function showSelectionTable(){
+				$('#model-selection').show();
+				$('#form-to-estimate').hide();
+				$('#btn-show-selection').hide();
+				$(this).scrollTop(0);
+				showSelectedModel();
+			}
+
+			function toEstimate(){
+				$('#model-selection').hide();
+				$('#form-to-estimate').show();
+				$('#btn-show-selection').show();
+				$(this).scrollTop(0);
+			}
+		</script>
+
+		<button id="btn-show-selection"class="btn" style="margin: 20px" onclick="showSelectionTable()">Pilih Model</button>
+
+		<div id="model-selection" style="display: none ;" class="box">
+			<div style="text-align: right;">
+				<div style="display: inline-block;">
+					<button id="btn-color-model" class="btn" onclick="backSelModel()" style="margin: 20px; display: none; text-align: right;">Back</button>			
+					<button id="btn-available"class="btn" onclick="backAvailModel()" style="margin: 20px;display: none;">Back</button>		
+				</div>
+			</div>
+			
+			<div style="text-align: center;">
+			<div style="display: inline-block;">
+				<table id="selected-model">
+
+				</table>
+
+				<table id="color-model">
+					
+					<script type="text/javascript">
+							console.log('select model');											
+					</script>
+				</table>
+
+				<table id="available-model">
+							
+				</table>
+				<button id="btn-to-estimate" class="btn" style="margin-top: 20px" onclick="toEstimate()">Selesai</button>			
+			</div>
+		</div>
+		</div>
+		<form id="form-to-estimate" class="form-inline" id="form" enctype="multipart/form-data" method="POST" style="margin-top: 20px">
+		  <div class="form-group">
+		  	<div class="row">
+		  		<div class="col-md-8">
+		  			<img class="figure" id="prev_input" src="#" height="300px" alt="">
+		  			<input type="file"  id="file" value="Choose" name="file" accept="image/*" onchange="readURL(this);" multiple >
+		  		</div>
+		  		<div class="col-md-4 button-wrapper" >
+		  			<button id="upload-btn" type="submit" class="btn btn-default" style="margin-top:50%">Estimasi</button>
+		  		</div>
+		  	</div>
+		  	
+		  </div>
+		  <div class="form-group">
+		  	
+		  </div>  
+		</form>
+		<br>
+		<div id="successAlert" class="alert alert-success" role="alert" style="display:none;"></div>
+		<div id="errorAlert" class="alert alert-danger" role="alert" style="display:none;"></div>
+	</div>
+	<!-- Generate -->
+	
+	<!-- Result -->
+	
+	<img id="loading" class="center" src="{{ url_for('static', filename = 'images/loading.gif') }}" alt="" style="display:none; align:center;
+	width:50px"></img>
+	<div id="result" class="container" style="display:none">
+		<h2 style="text-align:center">Hasil Estimasi Pigmen</h1>
+		<br></br>
+		<h3 style="margin-left:50px">Tanpa inpaint</h3>
+		<!-- RGB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-rgb"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-rgb"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-rgb"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB -->
+
+		<!-- RGB + HSV -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB + HSV</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-rgbhsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-rgbhsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-rgbhsv"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB + HSV -->
+
+		<!-- RGB + LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB + LAB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-rgblab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-rgblab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-rgblab"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB + LAB -->
+
+		<!-- RGB + YCbCr -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB + YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-rgbycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-rgbycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-rgbycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB + YCbCr -->
+
+		<!-- LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">LAB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-lab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-lab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-lab"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- LAB -->
+
+		<!-- LAB + YCbCr -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">LAB + YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-labycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-labycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-labycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV + LAB -->
+
+		<!-- HSV -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">HSV</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-hsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-hsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-hsv"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV -->
+
+		<!-- HSV + LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">HSV + LAB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-hsvlab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-hsvlab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-hsvlab"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV + LAB -->
+
+		<!-- HSV + LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">HSV + YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-hsvycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-hsvycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-hsvycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV + YCbCr -->
+
+		<!-- YCrCb -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- YCrCb -->
+
+		<!-- Result with inpaint -->
+		<br></br>
+		<h3 style="margin-left:50px">Dengan inpaint</h3>
+
+		<!-- RGB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-rgb"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-rgb"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-rgb"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB -->
+
+		<!-- RGB + HSV -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB + HSV</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-rgbhsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-rgbhsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-rgbhsv"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB + HSV -->
+
+		<!-- RGB + LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB + LAB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-rgblab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-rgblab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-rgblab"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB + LAB -->
+
+		<!-- RGB + YCbCr -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">RGB + YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-rgbycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-rgbycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-rgbycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- RGB + YCbCr -->
+
+		<!-- LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">LAB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-lab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-lab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-lab"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- LAB -->
+
+		<!-- LAB + YCbCr -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">LAB + YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-labycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-labycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-labycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV + LAB -->
+
+		<!-- HSV -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">HSV</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-hsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-hsv"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-hsv"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV -->
+
+		<!-- HSV + LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">HSV + LAB</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-hsvlab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-hsvlab"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-hsvlab"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV + LAB -->
+
+		<!-- HSV + LAB -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">HSV + YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-hsvycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-hsvycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-hsvycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- HSV + YCbCr -->
+
+		<!-- YCrCb -->
+		<div class="row box">
+			<div class="col-md-12">
+				<h2 class="title-head2">YCbCr</h2>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Antosianin : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="antosianin-ip-ycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Karotenoid : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="karotenoid-ip-ycbcr"></h4>
+					</div>										
+				</div>
+				<div class="row" style="margin-left:50px;">
+					<div class="col-md-4">
+						<h4 class="title-head3">Klorofil : &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+					</div>
+					<div class="col-md-4">
+						<h4 id="klorofil-ip-ycbcr"></h4>
+					</div>										
+				</div>
+			</div>
+		</div>
+		<!-- YCrCb -->
+
+	</div>
+	<!-- Result -->
+
+	<!-- Footer --> 
+	
+	<footer class="footer">
+		<div class="footer_content">
+			<div class="container">
+				<div class="row">
+					
+					<!-- Footer Column -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_about">
+							<div>
+								<a href="#">
+									<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+										<div class="logo_image"><div><img src="static/images/logo.png" alt=""></div></div>
+										<div class="logo_content">
+											<div id="logo_text" class="logo_text logo_text_not_ie">Estimator Pigmen Daun</div>
+											<div class="logo_sub">Powered with Python & Keras</div>
+										</div>
+									</div>
+								</a>	
+							</div>
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="footer_extra">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
+							<div class="footer_social">
+								
+							</div>
+							<div class="footer_extra_right ml-lg-auto text-lg-right">
+								<div class="footer_extra_links">
+									
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+		
+</div>
+
+
+</body>
+</html>

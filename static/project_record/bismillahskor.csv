@@ -1,0 +1,81 @@
+Project :,bismillah
+RGB
+Train Loss,Train Mae,Val Loss,Val Mae
+
+RGB + HSV
+Train Loss,Train Mae,Val Loss,Val Mae
+
+RGB + LAB
+Train Loss,Train Mae,Val Loss,Val Mae
+
+RGB + YCbCr
+
+HSV
+
+HSV + LAB
+
+HSV + YCbCr
+
+LAB
+
+LAB + YCbCr
+
+ YCbCr
+
+RGB Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+RGB + HSV Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+0.006511578826527847,0.05339832939207554,0.030770355835556984,0.0992329865694046
+
+RGB + LAB Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+RGB + YCbCr Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+HSV Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+HSV + LAB Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+HSV + YCbCr Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+LAB  Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+LAB + YCbCr Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+ YCbCr Inpaint
+Train Loss,Train Mae,Val Loss,Val Mae
+
+Rata-rata Skor
+Tanpa Inpaint
+Ruang Warna,Train Loss,Train Mae,Val Loss,Val Mae
+RGB,0,0,0,0
+RGB+HSV,0,0,0,0
+RGB+LAB,0,0,0,0
+RGB+YCbCr,0,0,0,0
+HSV,0,0,0,0
+HSV+LAB,0,0,0,0
+HSV+YCbCr,0,0,0,0
+LAB,0,0,0,0
+LAB+YCbCr,0,0,0,0
+YCbCr,0,0,0,0
+
+Dengan Inpaint
+Ruang Warna,Train Loss,Train Mae,Val Loss,Val Mae
+RGB,0,0,0,0
+RGB+HSV,0.006511578826527847,0.05339832939207554,0.030770355835556984,0.0992329865694046
+RGB+LAB,0,0,0,0
+RGB+YCbCr,0,0,0,0
+HSV,0,0,0,0
+HSV+LAB,0,0,0,0
+HSV+YCbCr,0,0,0,0
+LAB,0,0,0,0
+LAB+YCbCr,0,0,0,0
+YCbCr,0,0,0,0
